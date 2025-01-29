@@ -1,13 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>BirdStone</title>
-    <link rel="shortcut icon" type="image/jpg" href="ic_launcher-web.png"/>
-  </head>
-  <body>
-    <header>BirdStone</header>
-    <main>The app that does not like being stuck in semantics.</main>
-    <footer></footer>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPort | Learn & Build</title>
+    <style>
+        :root { --primary: #2c3e50; --secondary: #3498db; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        
+        /* Navigation */
+        nav { background: var(--primary); padding: 1rem; position: fixed; width: 100%; top: 0; }
+        nav a { color: white; text-decoration: none; margin: 0 1rem; }
+        nav a:hover { color: var(--secondary); }
+        
+        /* Sections */
+        section { padding: 5rem 2rem; min-height: 100vh; }
+        .hero { background: #f8f9fa; text-align: center; padding-top: 8rem; }
+        .project-card { background: white; padding: 1rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        /* Responsive */
+        @media (max-width: 600px) { nav { text-align: center; padding: 1rem 0; } nav a { display: block; margin: 0.5rem; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <h1>Boost Your Productivity</h1>
+        <p>Learn smarter with our AI-powered learning app</p>
+        <button onclick="location.href='#projects'">View App</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="your-photo.jpg" alt="Profile" style="width: 150px; border-radius: 50%; margin: 1rem 0;">
+        <p>Full-stack developer passionate about building tools that enhance learning and productivity. 5+ years experience in web development.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <h3>LearnFlow App</h3>
+            <p>AI-powered learning platform with spaced repetition system</p>
+            <a href="https://yourapp.com" target="_blank">Try Now</a>
+        </div>
+        <div class="project-card">
+            <h3>CodeMentor</h3>
+            <p>Real-time programming collaboration tool</p>
+            <a href="#contact">In Development</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div style="margin-top: 2rem;">
+            <a href="https://github.com/yourprofile" target="_blank">GitHub</a> |
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll and page navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const response = await fetch(e.target.action, {
+                method: 'POST',
+                body: new FormData(e.target),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                alert('Message sent!');
+                form.reset();
+            } else {
+                alert('Oops! Something went wrong.');
+            }
+        });
+    </script>
+</body>
 </html>
