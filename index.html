@@ -5,31 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevPort | Learn & Build</title>
     <style>
-        :root { --primary: #2c3e50; --secondary: #3498db; }
+        :root { 
+            --primary: #2c3e50; 
+            --secondary: #3498db; 
+            --light: #f8f9fa;
+            --dark: #34495e;
+            --accent: #1abc9c;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; }
-        
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: var(--light); color: var(--dark); }
+
         /* Navigation */
-        nav { background: var(--primary); padding: 1rem; position: fixed; width: 100%; top: 0; }
-        nav a { color: white; text-decoration: none; margin: 0 1rem; }
-        nav a:hover { color: var(--secondary); }
-        
+        nav { background: var(--primary); padding: 1rem 2rem; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; text-decoration: none; margin: 0 1rem; font-weight: bold; }
+        nav a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 10rem 2rem;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .hero h1 { font-size: 3rem; }
+        .hero p { font-size: 1.2rem; margin: 1rem 0; }
+        .hero button { padding: 0.8rem 2rem; border: none; background: var(--accent); color: white; font-size: 1rem; cursor: pointer; border-radius: 5px; }
+        .hero button:hover { background: var(--secondary); }
+
         /* Sections */
         section { padding: 5rem 2rem; min-height: 100vh; }
-        .hero { background: #f8f9fa; text-align: center; padding-top: 8rem; }
-        .project-card { background: white; padding: 1rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        
+        section h2 { font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
+        .about img { width: 150px; border-radius: 50%; margin: 1rem 0; display: block; margin-left: auto; margin-right: auto; }
+        .project-card { background: white; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .project-card h3 { margin-bottom: 0.5rem; }
+        .project-card p { margin-bottom: 1rem; }
+        .project-card a { color: var(--accent); text-decoration: none; font-weight: bold; }
+        .project-card a:hover { color: var(--secondary); }
+
+        /* Contact Form */
+        form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; }
+        form input, form textarea, form button {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+        }
+        form button { background: var(--primary); color: white; cursor: pointer; }
+        form button:hover { background: var(--secondary); }
+        .social-links a { color: var(--primary); text-decoration: none; margin: 0 0.5rem; }
+        .social-links a:hover { color: var(--secondary); }
+
         /* Responsive */
-        @media (max-width: 600px) { nav { text-align: center; padding: 1rem 0; } nav a { display: block; margin: 0.5rem; } }
+        @media (max-width: 768px) { 
+            nav { flex-direction: column; }
+            nav a { margin: 0.5rem 0; }
+            .hero { padding: 8rem 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <!-- Home Section -->
@@ -40,9 +94,9 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="about">
         <h2>About Me</h2>
-        <img src="your-photo.jpg" alt="Profile" style="width: 150px; border-radius: 50%; margin: 1rem 0;">
+        <img src="your-photo.jpg" alt="Profile">
         <p>Full-stack developer passionate about building tools that enhance learning and productivity. 5+ years experience in web development.</p>
     </section>
 
@@ -69,7 +123,7 @@
             <textarea name="message" placeholder="Your message" required></textarea>
             <button type="submit">Send</button>
         </form>
-        <div style="margin-top: 2rem;">
+        <div class="social-links" style="text-align: center; margin-top: 2rem;">
             <a href="https://github.com/yourprofile" target="_blank">GitHub</a> |
             <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
         </div>
