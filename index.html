@@ -3,159 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevPort | Learn & Build</title>
+    <title>Apple Inspired Demo</title>
     <style>
-        :root { 
-            --primary: #2c3e50; 
-            --secondary: #3498db; 
-            --light: #f8f9fa;
-            --dark: #34495e;
-            --accent: #1abc9c;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: var(--light); color: var(--dark); }
 
-        /* Navigation */
-        nav { background: var(--primary); padding: 1rem 2rem; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-        nav a { color: white; text-decoration: none; margin: 0 1rem; font-weight: bold; }
-        nav a:hover { color: var(--accent); }
+        nav {
+            background-color: rgba(43, 43, 43, 0.9);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
 
-        /* Hero Section */
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: #86868b;
+        }
+
         .hero {
-            background: url('hero-bg.jpg') no-repeat center center/cover;
+            background-image: url('https://via.placeholder.com/1440x800');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: white;
             text-align: center;
-            padding: 10rem 2rem;
-            position: relative;
+            padding-top: 50px;
         }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
-        .hero h1 { font-size: 3rem; }
-        .hero p { font-size: 1.2rem; margin: 1rem 0; }
-        .hero button { padding: 0.8rem 2rem; border: none; background: var(--accent); color: white; font-size: 1rem; cursor: pointer; border-radius: 5px; }
-        .hero button:hover { background: var(--secondary); }
 
-        /* Sections */
-        section { padding: 5rem 2rem; min-height: 100vh; }
-        section h2 { font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
-        .about img { width: 150px; border-radius: 50%; margin: 1rem 0; display: block; margin-left: auto; margin-right: auto; }
-        .project-card { background: white; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .project-card h3 { margin-bottom: 0.5rem; }
-        .project-card p { margin-bottom: 1rem; }
-        .project-card a { color: var(--accent); text-decoration: none; font-weight: bold; }
-        .project-card a:hover { color: var(--secondary); }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
 
-        /* Contact Form */
-        form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; }
-        form input, form textarea, form button {
+        .cta-button {
+            background-color: #0071e3;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #0077ed;
+        }
+
+        .products {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .product-card {
             padding: 1rem;
-            margin: 0.5rem 0;
-            border: 2px solid var(--primary);
-            border-radius: 5px;
         }
-        form button { background: var(--primary); color: white; cursor: pointer; }
-        form button:hover { background: var(--secondary); }
-        .social-links a { color: var(--primary); text-decoration: none; margin: 0 0.5rem; }
-        .social-links a:hover { color: var(--secondary); }
 
-        /* Responsive */
-        @media (max-width: 768px) { 
-            nav { flex-direction: column; }
-            nav a { margin: 0.5rem 0; }
-            .hero { padding: 8rem 2rem; }
-            .hero h1 { font-size: 2.5rem; }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #f5f5f7;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6e6e73;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <ul>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Sites</a></li>
+        </ul>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="hero">
-        <h1>Boost Your Productivity</h1>
-        <p>Learn smarter with our AI-powered learning app</p>
-        <button onclick="location.href='#projects'">View App</button>
+    <section class="hero">
+        <h1 style="color: rgb(60, 60, 60);">Welcome to the Future</h1>
+        <p style="color: rgb(100, 100, 100);">Experience innovation like never before.</p>
+        
+        <a href="#" class="cta-button">Learn More</a>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <img src="your-photo.jpg" alt="Profile">
-        <p>Full-stack developer passionate about building tools that enhance learning and productivity. 5+ years experience in web development.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-card">
-            <h3>LearnFlow App</h3>
-            <p>AI-powered learning platform with spaced repetition system</p>
-            <a href="https://yourapp.com" target="_blank">Try Now</a>
-        </div>
-        <div class="project-card">
-            <h3>CodeMentor</h3>
-            <p>Real-time programming collaboration tool</p>
-            <a href="#contact">In Development</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Get in Touch</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" placeholder="Your message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <div class="social-links" style="text-align: center; margin-top: 2rem;">
-            <a href="https://github.com/yourprofile" target="_blank">GitHub</a> |
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    
+<!--
+    <section class="products">
+        <h2>Latest Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 1">
+                <h3>New iPhone</h3>
+                <a href="#">Buy</a>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 2">
+                <h3>MacBook Pro</h3>
+                <a href="#">Buy</a>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 3">
+                <h3>Apple Watch</h3>
+                <a href="#">Buy</a>
+            </div>
         </div>
     </section>
 
-    <script>
-        // Smooth scroll and page navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form submission handling
-        const form = document.querySelector('form');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const response = await fetch(e.target.action, {
-                method: 'POST',
-                body: new FormData(e.target),
-                headers: { 'Accept': 'application/json' }
-            });
-            if (response.ok) {
-                alert('Message sent!');
-                form.reset();
-            } else {
-                alert('Oops! Something went wrong.');
-            }
-        });
-    </script>
+-->
+    
+    <footer>
+        <div class="footer-content">
+            <p> 伊藤　ショーン | Shon Ito </p>
+        </div>
+    </footer>
 </body>
 </html>
