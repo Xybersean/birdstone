@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Inspired Demo</title>
+    <title>Sean Ito | Developer Portfolio</title>
     <style>
+        :root {
+            --primary: #0071e3;
+            --dark: #1d1d1f;
+            --light: #f5f5f7;
+            --text: #1d1d1f;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,109 +19,141 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
+        body {
+            background-color: white;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
         nav {
-            background-color: rgba(43, 43, 43, 0.9);
-            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem 2rem;
             position: fixed;
             width: 100%;
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
         nav ul {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             list-style: none;
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         nav a {
-            color: white;
+            color: var(--text);
             text-decoration: none;
             font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #86868b;
+            color: var(--primary);
         }
 
+        /* Hero Section */
         .hero {
-            background-image: url('https://via.placeholder.com/1440x800');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
+            padding: 120px 2rem 2rem;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            color: white;
-            text-align: center;
-            padding-top: 50px;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
+            line-height: 1.1;
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
+            max-width: 600px;
+            color: #86868b;
         }
 
-        .cta-button {
-            background-color: #0071e3;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .cta-button:hover {
-            background-color: #0077ed;
-        }
-
-        .products {
+        /* Projects Section */
+        .projects {
             padding: 4rem 2rem;
-            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .products-grid {
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
-            margin: 2rem auto;
+            margin-top: 2rem;
         }
 
-        .product-card {
-            padding: 1rem;
+        .project-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
 
-        .product-card img {
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
             width: 100%;
-            height: auto;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
         }
 
+        /* Footer */
         footer {
-            background-color: #f5f5f7;
-            padding: 2rem;
+            background-color: var(--light);
+            padding: 3rem 2rem;
             text-align: center;
-            font-size: 0.8rem;
-            color: #6e6e73;
+            margin-top: 4rem;
         }
 
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
-            }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
 
+        .social-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .hero p {
                 font-size: 1.2rem;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -122,49 +161,43 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">Sites</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <h1 style="color: rgb(60, 60, 60);">Welcome to the Future</h1>
-        <p style="color: rgb(100, 100, 100);">Experience innovation like never before.</p>
-        
-        <a href="#" class="cta-button">Learn More</a>
-    </section>
-
-    
-<!--
-    <section class="products">
-        <h2>Latest Products</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 1">
-                <h3>New iPhone</h3>
-                <a href="#">Buy</a>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 2">
-                <h3>MacBook Pro</h3>
-                <a href="#">Buy</a>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 3">
-                <h3>Apple Watch</h3>
-                <a href="#">Buy</a>
-            </div>
+        <h1>Sean Ito<br>Developer & Creator</h1>
+        <p>Building digital experiences with modern web technologies.</p>
+        <div class="social-links">
+            <a href="https://github.com/ito_sean" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/ito_sean" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/ito_sean" target="_blank">Twitter</a>
         </div>
     </section>
 
--->
-    
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="project-thumbnail.jpg" alt="Project 1">
+                <h3>E-Commerce Platform</h3>
+                <p>Next.js, TypeScript, Node.js</p>
+                <a href="#">View Project →</a>
+            </div>
+            <!-- Add more project cards -->
+        </div>
+    </section>
+
     <footer>
-        <div class="footer-content">
-            <p> 伊藤　ショーン | Shon Ito </p>
+        <div class="social-links">
+            <a href="mailto:hello@example.com">Email</a>
+            <a href="https://github.com/ito_sean">GitHub</a>
+            <a href="/resume.pdf">Resume</a>
         </div>
+        <p>© 2024 Sean Ito. Built with simplicity.</p>
     </footer>
 </body>
 </html>
