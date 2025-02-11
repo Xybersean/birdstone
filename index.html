@@ -110,7 +110,7 @@
 
         .project-card img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 1rem;
@@ -124,12 +124,6 @@
             margin-top: 4rem;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1rem 0;
-        }
 
         .social-links a {
             color: var(--text);
@@ -137,9 +131,6 @@
             transition: color 0.3s ease;
         }
 
-        .social-links a:hover {
-            color: var(--primary);
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -163,7 +154,6 @@
         <ul>
             <li><a href="#work">Work</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -171,32 +161,22 @@
     <section class="hero">
         <h1>Sean Ito<br>Developer & Creator</h1>
         <p>Building digital experiences with modern web technologies.</p>
-        <div class="social-links">
-            <a href="https://github.com/ito_sean" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/ito_sean" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/ito_sean" target="_blank">Twitter</a>
-        </div>
     </section>
 
     <section id="projects" class="projects">
         <h2>Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="project-thumbnail.jpg" alt="Project 1">
-                <h3>E-Commerce Platform</h3>
-                <p>Next.js, TypeScript, Node.js</p>
-                <a href="#">View Project →</a>
+                <img src="ic_launcher-web.png" alt="Project Birdstone">
+                <h3>Project Birdstone</h3>
+                <p>Kotlin and Firebase</p>
+                <a href="https://github.com/seanito14/BirdStone">Request Access on Github →</a>
             </div>
             <!-- Add more project cards -->
         </div>
     </section>
 
     <footer>
-        <div class="social-links">
-            <a href="mailto:hello@example.com">Email</a>
-            <a href="https://github.com/ito_sean">GitHub</a>
-            <a href="/resume.pdf">Resume</a>
-        </div>
         <p>© 2025 Sean Ito.</p>
     </footer>
 </body>
