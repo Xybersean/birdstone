@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Project Birdstone - A native Android application built with Kotlin and Firebase. Request access to join the beta.">
+    <meta name="keywords" content="Birdstone, Android, Kotlin, Firebase, Mobile App, Sean Ito">
+    <meta name="author" content="Sean Ito">
+
+    <title>Project Birdstone | Sean Ito</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="ic_launcher-web.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-gradient" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="ic_launcher-web.png" alt="Sean Ito Logo">
+                <span>Sean Ito</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <a href="https://github.com/seanito14/ProjectBirdStone" target="_blank" rel="noopener"
+                class="nav-cta">Request Access</a>
+
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" style="min-height: 80vh;">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot" style="background: #8b5cf6;"></span>
+                <span>Private Beta</span>
+            </div>
+
+            <h1>
+                Project <span class="gradient-text">Birdstone</span>
+            </h1>
+
+            <p class="hero-tagline">
+                A native Android application built with modern architecture patterns,
+                featuring real-time sync and cloud backend integration.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="https://github.com/seanito14/ProjectBirdStone" target="_blank" rel="noopener"
+                    class="btn btn-primary">
+                    Request Access on GitHub
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="index.html" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m12 19-7-7 7-7" />
+                        <path d="M19 12H5" />
+                    </svg>
+                    Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="about-content" style="gap: 4rem;">
+                <div class="about-visual" style="order: -1;">
+                    <div class="about-card" style="text-align: center; padding: 3rem;">
+                        <img src="ic_launcher-web.png" alt="Birdstone App Icon"
+                            style="width: 200px; border-radius: 32px; margin: 0 auto; box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);">
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3>About the Project</h3>
+                    <p>
+                        Birdstone is a passion project that showcases modern Android development practices.
+                        Built entirely in Kotlin, it leverages the power of Jetpack Compose for a beautiful,
+                        responsive UI and Firebase for seamless cloud synchronization.
+                    </p>
+                    <p>
+                        The app is currently in private beta and access is granted on request.
+                        If you're interested in testing or collaborating, please reach out!
+                    </p>
+
+                    <h3 style="margin-top: 2rem;">Tech Stack</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Kotlin</span>
+                        <span class="tech-badge">Jetpack Compose</span>
+                        <span class="tech-badge">Firebase</span>
+                        <span class="tech-badge">MVVM</span>
+                        <span class="tech-badge">Coroutines</span>
+                        <span class="tech-badge">Material 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Features</h2>
+                <p>What makes Birdstone special</p>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Architecture</span>
+                        </div>
+                        <h3>Modern Architecture</h3>
+                        <p>Built with MVVM pattern, clean architecture principles, and unidirectional data flow for
+                            maintainable, testable code.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Cloud</span>
+                        </div>
+                        <h3>Real-time Sync</h3>
+                        <p>Seamless cloud synchronization powered by Firebase, ensuring your data is always up-to-date
+                            across devices.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Design</span>
+                        </div>
+                        <h3>Material You</h3>
+                        <p>Beautiful, adaptive UI built with Jetpack Compose and Material 3 design system with dynamic
+                            theming support.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" id="access">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Interested?</h2>
+                <p>Request access to join the private beta and be among the first to experience Birdstone.</p>
+
+                <div style="margin-top: 2rem;">
+                    <a href="https://github.com/seanito14/ProjectBirdStone" target="_blank" rel="noopener"
+                        class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        Request Access on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Sean Ito. <a href="index.html">Back to Portfolio</a></p>
+    </footer>
+
+    <!-- Mobile Navigation Script -->
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
